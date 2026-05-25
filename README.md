@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexus Dashboard
 
-## Getting Started
+A modern learning analytics dashboard built using Next.js 16, Tailwind CSS, Framer Motion, and Supabase.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Supabase
+- Lucide React Icons
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Modern responsive dashboard UI
+- Course progress tracking
+- Weekly activity heatmap
+- Animated course cards
+- Glassmorphism design system
+- Supabase integration
+- Server-side data fetching
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Architecture Decisions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Server / Client Component Split
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Server Components:
+- `page.tsx`
+- Supabase data fetching
 
-## Deploy on Vercel
+Client Components:
+- Sidebar interactions
+- Framer Motion animations
+- Interactive UI cards
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This split improves performance by reducing unnecessary client-side JavaScript.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Supabase Integration
+
+The dashboard fetches course data from a Supabase table named:
+
+```sql
+courses
