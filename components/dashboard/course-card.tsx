@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import * as Icons from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -15,9 +16,8 @@ export default function CourseCard({
   icon_name,
 }: Props) {
 
-  const Icon =
-    Icons[icon_name as keyof typeof Icons] ||
-    Icons.BookOpen;
+  const LucideIcon =
+  Icons[icon_name as keyof typeof Icons] as React.ElementType;
 
   return (
     <motion.article
@@ -42,7 +42,7 @@ export default function CourseCard({
         <div className="flex items-start justify-between">
 
           <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
-            <Icon className="w-6 h-6 text-indigo-400" />
+            <LucideIcon className="w-6 h-6 text-indigo-400" />
           </div>
 
           <span className="text-sm font-medium text-zinc-400">
